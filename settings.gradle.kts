@@ -24,4 +24,9 @@ dependencyResolutionManagement {
 
 rootProject.name = "PizzaApp"
 include(":app")
- 
+include(":data")
+include(":core:ui")
+include(":core:designsystem")
+include(":core:model")
+include(":core:network")
+include(":feature:home")
