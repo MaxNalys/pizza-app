@@ -42,5 +42,4 @@ dependencies {
     implementation(libs.compose.runtime)
 
     implementation(libs.coil.kt.compose)
-    implementation(libs.lottie.compose)
 }

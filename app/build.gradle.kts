@@ -47,6 +47,9 @@ android {
 
 dependencies {
     implementation(project(":core:designsystem"))
+    implementation(project(":feature:splash"))
+    implementation(project(":feature:home"))
+
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
@@ -64,6 +67,7 @@ dependencies {
     implementation(libs.compose.material3)
     implementation(libs.activity.compose)
     debugImplementation(libs.compose.ui.tooling)
+    implementation(libs.navigation.compose)
 
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)

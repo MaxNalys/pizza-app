@@ -1,15 +1,13 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.kotlin.serialization)
 }
 
 android {
-    namespace = "com.dev.data"
-    compileSdk {
-        version = release(36) {
-            minorApiLevel = 1
-        }
-    }
+    namespace = "com.dev.splash"
+    compileSdk = 36
 
     defaultConfig {
         minSdk = 24
@@ -37,11 +35,19 @@ android {
 }
 
 dependencies {
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.appcompat)
-    implementation(libs.material)
-    implementation(libs.core.ktx)
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
+    implementation(project(":core:designsystem"))
+
+    implementation(libs.compose.ui)
+    implementation(libs.compose.ui.preview)
+    implementation(libs.compose.ui.tooling)
+    implementation(libs.compose.material3)
+    implementation(libs.compose.runtime)
+    implementation(libs.navigation.compose)
+    implementation(libs.kotlinx.serialization.json)
+
+    implementation(libs.coil.kt.compose)
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.8.0")
+    implementation(libs.androidx.animation.core)
+
+
 }
