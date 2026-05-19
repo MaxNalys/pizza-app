@@ -22,8 +22,9 @@ private val BUTTON_HEIGHT = 48.dp
 fun PizzaAppButton(
     text: String,
     modifier: Modifier = Modifier,
+    contentPadding: PaddingValues = PaddingValues(horizontal = LARGE_PADDING),
     onClick: () -> Unit,
-    ) {
+) {
     Button(
         onClick = onClick,
         shape = RoundedCornerShape(ROUNDED_CORNER_PERCENT),
@@ -31,7 +32,7 @@ fun PizzaAppButton(
             containerColor = MaterialTheme.colorScheme.primary,
             contentColor = MaterialTheme.colorScheme.onPrimary
         ),
-        contentPadding = PaddingValues(horizontal = LARGE_PADDING),
+        contentPadding = contentPadding,
         modifier = modifier.height(BUTTON_HEIGHT)
     ) {
         Text(
@@ -47,7 +48,7 @@ private fun PizzaAppButtonPreview(){
     PizzaAppTheme {
         PizzaAppButton(
             text = "Add",
-            Modifier.width(100.dp)
+            modifier = Modifier.width(100.dp)
         ) { }
     }
 }

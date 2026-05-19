@@ -14,8 +14,8 @@ import com.dev.designsystem.theme.colorDarkBg
 
 @Composable
 fun AppBackground(
-    curveHeight: Float = 0.5f,
-    curveDepth: Float = 300f,
+    curveHeight: Float = 0.525f,
+    curveDepth: Float = 420f,
     content: @Composable () -> Unit
 ) {
     Box(Modifier.fillMaxSize()) {
