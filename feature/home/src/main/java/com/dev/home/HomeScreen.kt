@@ -140,21 +140,17 @@ fun HomeScreen(viewModel: HomeViewModel = hiltViewModel()) {
 
             Text(
                 text = currentPizza?.description.orEmpty(),
-                style = MaterialTheme.typography.displaySmall.copy(
+                style = MaterialTheme.typography.labelMedium.copy(
                     fontSize = 20.sp,
-                    lineHeight = 28.sp
+                    lineHeight = 24.sp
                 ),
-                color = Color(0xFF3D3D3D),
+                color = Color(0xFF1E1E1E),
                 modifier = Modifier
                     .fillMaxWidth()
-                    .graphicsLayer {
-                        alpha = contentProgress
-                        translationY = (1f - contentProgress) * 60f
-                    }
                     .padding(horizontal = Paddings.LARGE_PADDING),
             )
 
-            Spacer(Modifier.height(Paddings.LARGE_PADDING))
+            Spacer(Modifier.height(Paddings.XX_LARGE_PADDING))
 
             if (currentPizza != null) {
                 val variant = currentPizza.variants.find { it.size == state.selectedSize }

@@ -8,11 +8,10 @@ import com.dev.designsystem.R
 
 val Figtree = FontFamily(
     Font(R.font.figtree_light, FontWeight.Light),
-    Font(R.font.figtree, FontWeight.Normal),
-    Font(R.font.figtree, FontWeight.SemiBold),
-    Font(R.font.figtree, FontWeight.Bold)
+    Font(R.font.figtree_regular, FontWeight.Normal),
+    Font(R.font.figtree_semi, FontWeight.SemiBold),
+    Font(R.font.figtree_bold, FontWeight.Bold)
 )
-
 val AppTypography = Typography(
 
     displayLarge = TextStyle(

@@ -68,7 +68,11 @@ fun BottomBar(
 
         Text(
             text = "$${String.format(Locale.US, "%.2f", totalPrice)}",
-            style = MaterialTheme.typography.displayMedium,
+            style = MaterialTheme.typography.displaySmall.copy(
+                fontWeight = FontWeight.Bold,
+                fontSize = 33.sp,
+                lineHeight = 38.sp
+            ),
             color = Color(0xFF1E1E1E),
         )
 
