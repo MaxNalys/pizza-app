@@ -9,6 +9,7 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data object HomeRoute
+
 fun NavController.navigateToHome(navOptions: NavOptions? = null) {
 
     this.navigate(HomeRoute, navOptions)

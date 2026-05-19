@@ -59,7 +59,9 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-
+    implementation(libs.coil.compose.v260)
     implementation(libs.hilt.android)
+    implementation(libs.hilt.navigation.compose)
+
     ksp(libs.hilt.compiler)
 }
