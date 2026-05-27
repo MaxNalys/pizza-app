@@ -35,11 +35,13 @@ import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.input.pointer.positionChanged
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.layout.onSizeChanged
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
 import coil.compose.AsyncImage
+import com.dev.designsystem.R
 import com.dev.model.Pizza
 import androidx.compose.ui.unit.IntSize
 
@@ -90,7 +92,7 @@ fun PizzaCarouselItem(
             Icon(
 
                 imageVector = Icons.Default.Search,
-                contentDescription = "Zoom",
+                contentDescription = stringResource(R.string.content_description_zoom),
                 tint = Color.White,
                 modifier = Modifier
                     .size(40.dp)

@@ -10,6 +10,7 @@ import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.graphics.nativeCanvas
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.dev.designsystem.R
 import com.dev.model.Pizza
@@ -56,7 +57,7 @@ fun BananaSizeSelector(
                         .offset(y = offsetY)
                 ) {
                     SizeButton(
-                        label = size,
+                        label = sizeLabel(size),
                         isSelected = size == selectedSize.uppercase(),
                         onClick = { if (variantExists) onSizeSelected(size) },
                     )
@@ -73,7 +74,7 @@ private fun BananaWithCurvedLabel(modifier: Modifier = Modifier) {
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         CurvedText(
-            text = "Banana for scale",
+            text = stringResource(R.string.banana_for_scale),
             modifier = Modifier
                 .width(220.dp)
                 .height(45.dp)
@@ -91,6 +92,14 @@ private fun BananaWithCurvedLabel(modifier: Modifier = Modifier) {
                 }
         )
     }
+}
+
+@Composable
+private fun sizeLabel(size: String): String = when (size) {
+    "S" -> stringResource(R.string.size_small)
+    "M" -> stringResource(R.string.size_medium)
+    "L" -> stringResource(R.string.size_large)
+    else -> size
 }
 
 @Composable

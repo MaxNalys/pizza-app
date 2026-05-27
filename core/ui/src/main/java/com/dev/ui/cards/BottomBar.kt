@@ -22,12 +22,13 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.dev.designsystem.R
 import com.dev.designsystem.component.PizzaAppButton
 import com.dev.designsystem.constants.Paddings
-import java.util.Locale
 
 @Composable
 fun BottomBar(
@@ -55,7 +56,11 @@ fun BottomBar(
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.spacedBy(Paddings.LARGE_PADDING),
         ) {
-            QtyActionCircle(label = "−", onClick = onDecrement)
+            QtyActionCircle(
+                label = stringResource(R.string.action_decrement),
+                onClick = onDecrement,
+                adjustBottomPadding = true,
+            )
 
             Text(
                 text = quantity.toString(),
@@ -63,11 +68,14 @@ fun BottomBar(
                 color = Color(0xFF1E1E1E),
             )
 
-            QtyActionCircle(label = "+", onClick = onIncrement)
+            QtyActionCircle(
+                label = stringResource(R.string.action_increment),
+                onClick = onIncrement,
+            )
         }
 
         Text(
-            text = "$${String.format(Locale.US, "%.2f", totalPrice)}",
+            text = stringResource(R.string.price_format, totalPrice),
             style = MaterialTheme.typography.displaySmall.copy(
                 fontWeight = FontWeight.Bold,
                 fontSize = 33.sp,
@@ -77,7 +85,7 @@ fun BottomBar(
         )
 
         PizzaAppButton(
-            text = "Add",
+            text = stringResource(R.string.action_add),
             onClick = onAddClick,
             contentPadding = PaddingValues(0.dp),
             modifier = Modifier.width(105.dp)
@@ -87,7 +95,11 @@ fun BottomBar(
 }
 
 @Composable
-private fun QtyActionCircle(label: String, onClick: () -> Unit) {
+private fun QtyActionCircle(
+    label: String,
+    onClick: () -> Unit,
+    adjustBottomPadding: Boolean = false,
+) {
     Box(
         modifier = Modifier
             .size(40.dp)
@@ -105,7 +117,7 @@ private fun QtyActionCircle(label: String, onClick: () -> Unit) {
             fontSize = 20.sp,
             fontWeight = FontWeight.Normal,
             color = Color(0xFF1E1E1E),
-            modifier = Modifier.padding(bottom = if (label == "−") 2.dp else 0.dp)
+            modifier = Modifier.padding(bottom = if (adjustBottomPadding) 2.dp else 0.dp)
         )
     }
 }

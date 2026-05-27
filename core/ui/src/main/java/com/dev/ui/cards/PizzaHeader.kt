@@ -21,7 +21,9 @@ import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.dev.designsystem.R
 import com.dev.designsystem.constants.Paddings
 import com.dev.designsystem.icon.PizzaAppIcons
 
@@ -50,7 +52,7 @@ fun PizzaHeader(
                     scaleY = 0.6f + (iconAnimationProgress * 0.4f)
                 },
             imageVector = PizzaAppIcons.ArrowBack,
-            contentDescription = "Back",
+            contentDescription = stringResource(R.string.content_description_back),
             onClick = onBackClick
         )
 
@@ -61,7 +63,7 @@ fun PizzaHeader(
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             Text(
-                text = "Pizzas",
+                text = stringResource(R.string.header_pizzas),
                 style = MaterialTheme.typography.bodySmall,
                 color = Color(0xFF9E9E9E),
             )
@@ -84,7 +86,7 @@ fun PizzaHeader(
                     scaleY = 0.6f + (iconAnimationProgress * 0.4f)
                 },
             imageVector = PizzaAppIcons.Favorite,
-            contentDescription = "Like",
+            contentDescription = stringResource(R.string.content_description_like),
             onClick = onFavoriteClick
         )
     }
